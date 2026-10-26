@@ -1,0 +1,155 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: lightgray;
+    color: black;
+    margin: 0;
+}
+
+.profile-header {
+    background: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+#main-heading {
+    font-size: 32px;
+    color: white;
+}
+
+.tagline {
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+h2 {
+    color: blue;
+}
+
+.profile-card p {
+    color: black;
+}
+
+.profile-card > h2 {
+    text-decoration: underline;
+}
+
+h2 ~ p {
+    letter-spacing: 1px;
+}
+
+.skills-list {
+    list-style-type: square;
+}
+
+.skill {
+    background-color: lightblue;
+    padding: 5px;
+    margin: 5px;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: orange;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+input[required],
+textarea[required] {
+    border-left: 3px solid blue;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid blue;
+}
+
+h3 + form {
+    margin-top: 10px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.page-footer {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.example-box {
+    width: 50%;
+    font-size: 1rem;
+    padding: 1em;
+    min-height: 10vh;
+    color: green;
+}
+
+#about p {
+    color: blue;
+}
