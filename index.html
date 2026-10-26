@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Profile</title>
-
+    <title>My Personal Profile - CSS Styling</title>
+    <!-- External CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,13 +27,16 @@
         <section class="profile-card" id="about">
             <h2>About Me</h2>
             <p>
-                Hello! I am learning web development and enjoy
+                Hello! I am learning <span class="highlight">web development</span> and enjoy
                 building websites using HTML and CSS.
             </p>
             <p>
                 My goal is to improve my programming skills
                 and build useful projects.
             </p>
+            <blockquote>
+                "The best way to predict the future is to invent it."
+            </blockquote>
         </section>
 
         <section class="profile-card" id="skills">
@@ -57,7 +59,7 @@
             </p>
 
             <p>
-                <a href="index.html" target="_blank">
+                <a href="https://example.com" target="_blank" title="Visit Example">
                     Visit my website
                 </a>
             </p>
@@ -65,14 +67,13 @@
             <h3>Send a Message</h3>
             <form action="#" method="post">
                 <label for="fullName">Full Name:</label>
-                <input  type="text" id="fullName" name="full_name" placeholder="Enter your full name" minlength="3" maxlength="60" required>
+                <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" minlength="3" maxlength="60" required>
 
                 <label for="emailAddress">Email Address:</label>
                 <input type="email" id="emailAddress" name="email_address" placeholder="you@example.com" required>
 
                 <label for="userMessage">Your Message</label>
-                <textarea id="userMessage" name="user_message" rows="5" placeholder="Write your message" required
-                ></textarea>
+                <textarea id="userMessage" name="user_message" rows="5" placeholder="Write your message" required></textarea>
 
                 <button type="submit">Send Message</button>
             </form>
@@ -81,7 +82,7 @@
     </main>
 
     <footer class="page-footer">
-        <p>My Personal Profile</p>
+        <p>&copy; 2026 My Personal Profile. All rights reserved.</p>
     </footer>
 
 </body>
