@@ -1,155 +1,300 @@
+/* ==========================================================================
+   CSS Basics and Traditional Styling
+   ========================================================================== */
 
+/* 
+   UNIVERSAL SELECTOR (*) 
+   Resets box-sizing and removes default margins 
+*/
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* 
+   CSS VARIABLES (Custom Properties)
+   Helps with maintainability and grouping colors 
+*/
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-color: #ecf0f1;
+    --text-color: #333333;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 
+   ELEMENT / TYPE SELECTOR
+   Backgrounds, Fonts, Text Properties 
+*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
     font-size: 16px;
     line-height: 1.6;
-    background-color: lightgray;
-    color: black;
-    margin: 0;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(to bottom, #ffffff, var(--bg-color));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-color);
 }
 
+/* 
+   ID SELECTOR
+   Specificity is higher than class or element selectors 
+*/
+#main-heading {
+    font-size: 2.5rem; /* rem unit */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   CLASS SELECTOR
+   Using hex colors, text-align, and padding 
+*/
 .profile-header {
-    background: blue;
-    color: white;
+    background-color: var(--primary-color);
+    color: #ffffff;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--accent-color);
 }
 
 .profile-image {
     width: 150px;
     height: 150px;
-    border: 3px solid white;
+    border: 4px solid #ffffff;
     border-radius: 50%;
-}
-
-#main-heading {
-    font-size: 32px;
-    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* box-shadow */
+    opacity: 0.95; /* opacity */
 }
 
 .tagline {
-    font-size: 18px;
+    font-size: 1.2em; /* em unit */
+    font-style: italic;
+    font-variant: small-caps;
+    color: #bdc3c7;
+    margin-top: 10px;
 }
 
+/* 
+   CLASS SELECTOR (Container) 
+   Using % and vw/vh units 
+*/
 .container {
     width: 90%;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
+/* 
+   CLASS SELECTOR (Profile Card)
+   Borders, border-radius, background shorthand, transitions 
+*/
 .profile-card {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid gray;
+    background: #ffffff; /* Shorthand background */
+    padding: 30px;
+    margin-bottom: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dcdde1;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px gray;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    min-height: 20vh; /* vh unit */
 }
 
-h2 {
-    color: blue;
+/* 
+   DESCENDANT COMBINATOR (space)
+   Targets h2 only if it is inside a .profile-card 
+*/
+.profile-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
-.profile-card p {
-    color: black;
-}
-
+/* 
+   CHILD COMBINATOR (>)
+   Targets only direct h2 children of .profile-card 
+*/
 .profile-card > h2 {
-    text-decoration: underline;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
+/* 
+   GENERAL SIBLING COMBINATOR (~)
+   Targets p elements that follow an h2 
+*/
 h2 ~ p {
-    letter-spacing: 1px;
+    text-indent: 20px;
+    word-spacing: 1px;
+    color: #555;
 }
 
+/* 
+   ATTRIBUTE SELECTOR
+   Targets any input with a 'required' attribute 
+*/
+input[required] {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* 
+   GROUPING SELECTORS
+   Apply the same rules to multiple elements 
+*/
+h1, h2, h3 {
+    font-family: 'Georgia', serif; /* Web-safe font */
+}
+
+/* 
+   LISTS
+   list-style-type, list-style-position 
+*/
 .skills-list {
     list-style-type: square;
+    list-style-position: inside;
+    padding-left: 10px;
 }
 
 .skill {
-    background-color: lightblue;
-    padding: 5px;
-    margin: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    cursor: default; /* cursor */
 }
 
-a:link {
-    color: blue;
-}
-
-a:visited {
-    color: purple;
-}
-
-a:hover {
-    color: red;
-}
-
-a:active {
-    color: orange;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
+/* 
+   LINKS AND PSEUDO-CLASSES
+   link, visited, hover, active states 
+*/
+a {
+    text-decoration: none;
     font-weight: bold;
 }
 
-input,
+a:link {
+    color: var(--accent-color);
+}
+
+a:visited {
+    color: #8e44ad; /* purple */
+}
+
+a:hover {
+    color: #e74c3c; /* red */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #e67e22; /* orange */
+}
+
+/* 
+   BLOCKQUOTE & PSEUDO-ELEMENTS
+   linear-gradient background, custom quotes 
+*/
+blockquote {
+    background: linear-gradient(to right, rgba(52, 152, 219, 0.1), transparent);
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.1em;
+    border-radius: 0 10px 10px 0;
+}
+
+blockquote::before {
+    content: "“";
+    font-size: 3em;
+    color: var(--accent-color);
+    line-height: 0;
+    vertical-align: -0.4em;
+}
+
+/* 
+   FORM ELEMENTS
+   Display, padding, borders, focus states 
+*/
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, 
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 1rem;
 }
 
-input[required],
-textarea[required] {
-    border-left: 3px solid blue;
-}
-
-input:focus,
+/* PSEUDO-CLASS (:focus) */
+input:focus, 
 textarea:focus {
-    outline: 2px solid blue;
+    outline: 3px solid rgba(52, 152, 219, 0.4);
+    outline-offset: 2px; /* outline-offset */
+    border-color: var(--accent-color);
 }
 
-h3 + form {
-    margin-top: 10px;
-}
-
+/* 
+   BUTTON STYLING
+   HSL colors, box-shadow, transition 
+*/
 button {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px;
+    background-color: hsl(204, 70%, 53%); /* hsl() */
+    color: #ffffff;
+    padding: 12px 24px;
+    margin-top: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: hsl(204, 70%, 40%); /* Darker on hover */
 }
 
+/* 
+   RADIAL GRADIENT & NAMED COLOR
+   Applied to the highlight span 
+*/
+.highlight {
+    background: radial-gradient(circle, rgba(255,255,0,0.4) 0%, rgba(255,255,0,0) 70%);
+    color: darkblue; /* Named color */
+    font-weight: bold;
+}
+
+/* 
+   FOOTER
+   Percent-based font-size, white-space 
+*/
 .page-footer {
-    background-color: gray;
-    color: white;
+    background-color: var(--primary-color);
+    color: #ffffff;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 90%; /* % unit */
 }
 
-.example-box {
-    width: 50%;
-    font-size: 1rem;
-    padding: 1em;
-    min-height: 10vh;
-    color: green;
-}
-
-#about p {
-    color: blue;
+.page-footer p {
+    white-space: nowrap; /* white-space property */
 }
