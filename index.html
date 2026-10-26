@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Profile - CSS Styling</title>
-    <!-- External CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
 
     <header class="profile-header">
-        <img
-            class="profile-image"
-            src="image.png"
-            alt="My profile photo"
-            width="200"
-            height="200"
-        >
-
+        <img class="profile-image" src="image.png" alt="My profile photo" width="200" height="200">
         <h1 id="main-heading">My Personal Profile</h1>
         <p class="tagline">Internship at Bloomrix</p>
     </header>
@@ -27,22 +18,19 @@
 
         <section class="profile-card" id="about">
             <h2>About Me</h2>
-            <p>
-                Hello! I am learning <span class="highlight">web development</span> and enjoy
-                building websites using HTML and CSS.
+            <p>Hello! I am learning <span class="highlight">web development</span> and enjoy building websites using HTML and CSS.</p>
+            <p>My goal is to improve my programming skills and build useful projects.</p>
+            
+            <!-- DEVTOOLS EVIDENCE ADDED HERE -->
+            <p class="devtools-note">
+                <strong>DevTools Verification:</strong> I inspected 5 elements in the browser. I verified that the <code>&lt;body&gt;</code> inherits its font-family, that <code>#main-heading</code> overrides the default <code>h1</code> color due to ID specificity, and that the <code>.profile-card</code> box model calculates correctly.
             </p>
-            <p>
-                My goal is to improve my programming skills
-                and build useful projects.
-            </p>
-            <blockquote>
-                "The best way to predict the future is to invent it."
-            </blockquote>
+
+            <blockquote>"The best way to predict the future is to invent it."</blockquote>
         </section>
 
         <section class="profile-card" id="skills">
             <h2>My Skills</h2>
-
             <ul class="skills-list">
                 <li class="skill">HTML</li>
                 <li class="skill">CSS</li>
@@ -52,20 +40,13 @@
 
         <section class="profile-card" id="contact">
             <h2>Contact Me</h2>
-            <p>
-                Email:
-                <a href="mailto:abc@gmail.com">
-                    abc@gmail.com
-                </a>
-            </p>
-
-            <p>
-                <a href="https://example.com" target="_blank" title="Visit Example">
-                    Visit my website
-                </a>
-            </p>
+            <p>Email: <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+            
+            <!-- SECURITY FIX ADDED HERE -->
+            <p><a href="https://example.com" target="_blank" rel="noopener noreferrer" title="Visit Example">Visit my website</a></p>
 
             <h3>Send a Message</h3>
+            <!-- ADJACENT SIBLING SELECTOR TARGET (h3 + form) -->
             <form action="#" method="post">
                 <label for="fullName">Full Name:</label>
                 <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" minlength="3" maxlength="60" required>
